@@ -1,4 +1,4 @@
 # debian7
-wget -O install.sh https://github.com/dkdenza/debian7/raw/master/x.sh?raw=true
-
-bash x.sh
+wget https://raw.githubusercontent.com/dkdenza/debian7/master/x.sh
+chmod +x x.sh
+./x.sh

@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+# screenFetch
+
+# Script to fetch system and theme settings for screenshots in most mainstream
+# Linux distributions.
+
+# Copyright (c) 2010-2012 Brett Bohnenkamper < kittykatt AT archlinux DOT us >
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+# and associated documentation files (the "Software"), to deal in the Software without restriction,
+# including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+# WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+# Yes, I do realize some of this is horribly ugly coding. Any ideas/suggestions would be
+# appreciated by emailing me or by stopping by http://github.com/KittyKatt/screenFetch . You
+# could also drop in on my IRC network, SilverIRC, at irc://kittykatt.silverirc.com:6667/screenFetch
+# to put forth suggestions/ideas. Thank you.
+#
+
+LANG=C
+LANGUAGE=C
+LC_ALL=C
+
+scriptVersion="3.2.2"
+
+######################
+# Settings for fetcher
+######################
+
+# This setting controls what ASCII logo is displayed. Available: Arch Linux (Old and Current Logos), Linux Mint, Ubuntu, Crunchbang, Debian, Gentoo, Mandrake/Mandriva, Slackware, SUSE, Fedora, BSD, OS X and None
+# distro="Linux"
+
+# This sets the information to be displayed. Available: distro, Kernel, DE, WM, Win_theme, Theme, Icons, Font, Background, ASCII. To get just the information, and not a text-art logo, you would take "ASCII" out of the below variable.
+#display="distro host kernel uptime pkgs shell res de wm wmtheme gtk disk cpu gpu mem"
+display=( distro host kernel uptime pkgs shell res de wm wmtheme gtk cpu gpu mem )
+# Display Type: ASCII or Text
+display_type="ASCII"
+
+# Colors to use for the information found. These are set below according to distribution. If you would like to set your OWN color scheme for these, uncomment the lines below and edit them to your heart's content.
+# textcolor="\e[0m"
+# labelcolor="\e[1;34m"
+
+# WM & DE process names
+# Removed WM's: compiz
+wmnames=( fluxbox openbox blackbox xfwm4 metacity kwin icewm pekwm fvwm dwm awesome wmaker stumpwm musca xmonad i3 ratpoison scrotwm spectrwm wmfs wmii beryl subtle e16 enlightenment sawfish emerald monsterwm dminiwm compiz Finder herbstluftwm notion bspwm )
+denames=( gnome-session xfce-mcs-manage xfce4-session xfconfd ksmserver lxsession gnome-settings-daemon mate-session mate-settings-daemon Finder )
+
+# Screenshot Settings
+# This setting lets the script know if you want to take a screenshot or not. 1=Yes 0=No
+screenshot=
+# You can specify a custom screenshot command here. Just uncomment and edit. Otherwise, we'll be using the default command: scrot -cd3.
+# screenCommand="scrot -cd5"
+hostshot=
+baseurl="http://www.example.com"
+serveraddr="www.example.com"
+scptimeout="20"
+serverdir="/path/to/directory"
+shotfile=$(printf "screenFetch-`date +'%Y-%m-%d_%H-%M-%S'`.png")
+
+# Verbose Setting - Set to 1 for verbose output.
+verbosity=
+
+#############################################
+#### CODE No need to edit past here CODE ####
+#############################################
+
+#########################################
+# Static Variables and Common Functions #
+#########################################
+c0="\033[0m" # Reset Text
+bold="\033[1m" # Bold Text
+underline="\033[4m" # Underline Text

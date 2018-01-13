@@ -30,7 +30,7 @@ fi
 #vps="zvur";
 vps="blangkon";
 
-#if [[ $vps = "zvur" ]]; then
+#if [[ $vps = "zvur" ]]
 	#source="http://"
 #else
 	source="http://tepsus-slow-vpn.xyz"
@@ -41,7 +41,7 @@ cd
 
 # check registered ip
 #wget -q -O IP $source/debian7/IP.txt
-#$if ! grep -w -q $MYIP IP; then
+#$if ! grep -w -q $MYIP IP
 #clear
 	#echo "หากต้องการใช้สคิปกรุณาฟักขี้เปียกขึ้นมาดมเเล้วส่ง ip เซิพมาหั้ยกุทางไหนก้ได้ที่พี่เทพติดต่อผมได้"
 

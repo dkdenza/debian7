@@ -241,7 +241,7 @@ sed -i 's/Internal/Internet/g' config.php
 sed -i '/SixXS IPv6/d' config.php
 cd
 
-#if [[ $ether = "eth0" ]]; then
+if [[ $ether = "eth0" ]]; then
 wget -O /etc/iptables.conf $source/Debian7/iptables.up.rules.eth0
 else
 wget -O /etc/iptables.conf $source/Debian7/iptables.up.rules.venet0

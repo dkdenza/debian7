@@ -30,14 +30,19 @@ vps="blangkon";
 #if [[ $vps = "zvur" ]]; then
 	#source="http://"
 #else
-	#source="http://tepsus-slow-vpn.xyz"
+	source="http://tepsus-slow-vpn.xyz"
 #fi
 
 # go to root
 cd
 
 # check registered ip
-
+######
+#####
+####
+###
+#
+#
 
 # ใช้สิทธิ์ root ในการรันคอมมาน ปิดไอพีวี6,ติดตั้ง wget curl, อัพเดท
 cd
